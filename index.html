@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="hi.css"
+    <title>Contact Us Form In Php</title>
+</head>
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 m-auto">
+                <div class="card mt-5">
+                    <div class="card-title">
+                        <h2 class="text-center py-2"> Contact Us </h2>
+                        <hr>
+                   
+                    </div>
+                    <div class="card-body">
+                        <form onsubmit="sendEmail(); reset(); return false;">
+                            <input type="text" id="name" name="UName" placeholder="User Name" class="form-control mb-2">
+                            <input type="email" id="Email" name="Email" placeholder="Email" class="form-control mb-2">
+                            <input type="text" id="subject" name="Subject" placeholder="Subject" class="form-control mb-2">
+                            <textarea name="msg" id="message" class="form-control mb-2" placeholder="Write The Message"></textarea>
+                            <button type="submit" name=""> Send </button>
+                        </form>
+
+                        <script src="https://smtpjs.com/v3/smtp.js"> </script>
+                        <script>
+                            function sendEmail(){
+                                Email.send({
+                                Host : "smtp.elasticemail.com",
+                                Username : "safa257234@gmail.com",
+                                Password : "",
+                                To : "safa257234@gmail.com",
+                                From : document.getElementById("Email").value,
+                                Subject : "This is the subject",
+                                Body : "And this is the body"
+                            }).then(
+                              message => alert(message)
+                            );
+                            
+                            }
+                           </script>
+                            
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        </body></html>
